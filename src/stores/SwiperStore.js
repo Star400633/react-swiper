@@ -1,8 +1,7 @@
-
-const EventEmmitter = require('events').EventEmitter;
-import assign from 'object-assign';
-import AppConstants from '../constants/AppConstants';
-import AppDispatcher from "../dispatcher/AppDispatcher";
+import AppConstants from "../constants/AppConstants"
+import AppDispatcher from "../dispatcher/AppDispatcher"
+const EventEmmitter = require('events').EventEmitter
+import assign from 'object-assign'
 
 const CHANGE_EVENT = "change";
 
