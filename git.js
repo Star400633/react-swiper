@@ -34,7 +34,7 @@ async function main () {
   switch(optType) {
     case 1:
       exec(`git add ./ && git commit -m "${commitMsg}" && git push`)
-      exit(1)
+      exit(0)
       break
     case 2:
       mergeBranch('dev', crtBrh, commitMsg).then(res => {
