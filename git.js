@@ -89,6 +89,7 @@ function mergeBranch(target, crt, msg='') {
       echo('合并发生冲突，操作撤销中~')
       await exec(`git merge --abort && git checkout ${crt}`)
       echo('代码已回退，请手动执行合并任务~')
+      await exec(`git checkout ${crt}`)
       resolve(false)
     } else {
       await exec(`git push && git checkout ${crt}`)
