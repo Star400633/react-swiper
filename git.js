@@ -39,19 +39,19 @@ async function main () {
     case 2:
       mergeBranch('dev', crtBrh, commitMsg).then(res => {
         res ? echo(`操作成功~`) : echo('操作失败，请检查代码~')
-        exit(1)
+        exit(0)
       })
       break
     case 3:
       mergeBranch('release', crtBrh, commitMsg).then(res => {
         res ? echo(`操作成功~`) : echo('操作失败，请检查代码~')
-        exit(1)
+        exit(0)
       })
       break
     case 4:
       mergeBranch('sandbox', crtBrh, commitMsg).then(res => {
         res ? echo(`操作成功~`) : echo('操作失败，请检查代码~')
-        exit(1)
+        exit(0)
       })
       break
     default:
