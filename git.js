@@ -83,7 +83,12 @@ function mergeBranch(target, crt, msg='') {
     await exec(`git add ./ && git commit -m "${msg}" && git push`)
     await exec(`git checkout ${target} && git pull`)
     const mergeRes = await exec(`git merge -m "Merge branch ${crt} into ${target}" ${crt}`)
-    console.log('===>mergeRes', mergeRes)
+    const { stdout } = mergeRes
+    if(stdout.indexOf(' Merge conflict') > -1) {
+      echo('合并发生冲突，已回退代码，请手动执行操作~')
+      resolve(false)
+    }
+    console.log('===>7878')
     await exec(`git push && git checkout ${crt}`)
     resolve(true)
   })
