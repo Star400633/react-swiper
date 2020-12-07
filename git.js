@@ -79,11 +79,12 @@ function getGitBranch () {
  * @param msg 合并信息
  */
 function mergeBranch(target, crt, msg='') {
-  return new Promise(resolve => {
-    exec(`git add ./ && git commit -m "${msg}" && git push`)
-    exec(`git checkout ${target} && git pull`)
-    exec(`git merge -m "Merge branch ${crt} into ${target}" ${crt}`)
-    exec(`git push && git checkout ${crt}`)
+  return new Promise(async resolve => {
+    await exec(`git add ./ && git commit -m "${msg}" && git push`)
+    await exec(`git checkout ${target} && git pull`)
+    const mergeRes = await exec(`git merge -m "Merge branch ${crt} into ${target}" ${crt}`)
+    console.log('===>mergeRes', mergeRes)
+    await exec(`git push && git checkout ${crt}`)
     resolve(true)
   })
 }
