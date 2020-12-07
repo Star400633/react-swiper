@@ -87,7 +87,7 @@ function mergeBranch(target, crt, msg='') {
     const flag = stdout.indexOf('Merge conflict') > -1
     if(flag) {
       echo('合并发生冲突，操作撤销中~')
-      await exec(`git merge --abort && git checkout ${crt}`)
+      await exec(`git merge --abort`)
       echo('代码已回退，请手动执行合并任务~')
       await exec(`git checkout ${crt}`)
       resolve(false)
