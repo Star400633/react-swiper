@@ -106,10 +106,10 @@ function mergeBranch(target, crt, msg='') {
 function getColor(color, text) {
   switch(color) {
     case 'red':
-      return `\033[31m ${text} \033[0m`
+      return `\\033[31m ${text} \\033[0m`
     case 'green':
-      return `\033[32m ${text} \033[0m`
+      return `\\033[32m ${text} \\033[0m`
     case 'yellow':
-      return `\033[33m ${text} \033[0m`
+      return `\\033[33m ${text} \\033[0m`
   }
 }
