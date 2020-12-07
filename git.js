@@ -86,7 +86,7 @@ function mergeBranch(target, crt, msg='') {
     const { stdout } = mergeRes
     const flag = stdout.indexOf('Merge conflict') > -1
     if(flag) {
-      echo('合并发生冲突，操作撤销中~')
+      echo(getColor('red', '合并发生冲突，操作撤销中~'))
       await exec(`git merge --abort`)
       echo('代码已回退，请手动执行合并任务~')
       await exec(`git checkout ${crt}`)
@@ -96,4 +96,20 @@ function mergeBranch(target, crt, msg='') {
       resolve(true)
     }
   })
+}
+
+/**
+ * 添加字体颜色
+ * @param color
+ * @param text
+ */
+function getColor(color, text) {
+  switch(color) {
+    case 'red':
+      return `\033[31m ${text} \033[0m`
+    case 'green':
+      return `\033[32m ${text} \033[0m`
+    case 'yellow':
+      return `\033[33m ${text} \033[0m`
+  }
 }
