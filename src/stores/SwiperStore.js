@@ -17,7 +17,6 @@ const SwiperStore = assign({}, EventEmmitter.prototype, {
     getImageDetail: function () {
         return this.imageDetail;
     },
-
     addChangeListener: function (callback) {
         this.on(CHANGE_EVENT, callback);
     },
