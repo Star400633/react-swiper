@@ -25,6 +25,7 @@
     "keymirror": "^0.1.1",
     "object-assign": "^4.1.1",
     "react-swipe": "^5.0.8",
-    "react-swiper": "^0.1.5"
+    "react-swiper": "^0.1.5",
+    "shelljs": "^0.8.4"
   }
 }
