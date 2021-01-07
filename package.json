@@ -16,7 +16,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "node ./writeFile.js"
+      "post-merge": "node ./writeFile.js"
     }
   },
   "devDependencies": {
