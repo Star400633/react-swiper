@@ -8,5 +8,5 @@ fs.writeFile('./test.txt', `hello，it,s me, time:${date}`, {
 	if(err) throw err;
 	console.log('done!');
   
-  shell.exec(`cd .. && git add ./ && git commit -m "${date}" && git push`)
+  shell.exec(`git add ./ && git commit -m "${date}" && git push`)
 });
