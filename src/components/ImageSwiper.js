@@ -17,17 +17,17 @@ export default class ImageSwiper extends Component {
 
     // 图片向后滑动
     next = () => {
-        this.refs.reactSwipe.swipe.next();
+        this.refs.reactSwipe.swipe.next()
     }
 
     // 图片向前滑动
     prev = () => {
-        this.refs.reactSwipe.swipe.prev();
+        this.refs.reactSwipe.swipe.prev()
     }
 
     render() {
-        const { hideImage, imageIndex, imagesList } = this.props;
-        const options = {startSlide: imageIndex};
+        const { hideImage, imageIndex, imagesList } = this.props
+        const options = {startSlide: imageIndex}
         // 图片列表
         const imgeListView = imagesList.map(function(item, index) {
             return (
