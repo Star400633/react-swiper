@@ -5,7 +5,6 @@
 import AppDispatcher from '../dispatcher/AppDispatcher'
 import AppConstants from '../constants/AppConstants'
 
-
 const SwiperActions = {
     /**
      * 点击评论图片大图
@@ -19,8 +18,6 @@ const SwiperActions = {
             }
         });
     },
+}
 
-
-};
-
-export default SwiperActions;
+export default SwiperActions
