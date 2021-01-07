@@ -7,6 +7,5 @@ fs.writeFile('./test.txt', `hello，it,s me, time:${date}`, {
 }, err => {
 	if(err) throw err;
 	console.log('done!');
-  
   shell.exec(`git add ./ && git commit -m "${date}" && git push`)
 });
